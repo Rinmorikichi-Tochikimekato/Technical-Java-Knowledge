@@ -1,0 +1,58 @@
+Microservices vs Monoliths : 
+benefits of a monolith: 
+simple to develop, simple to test, simple to deploy and simple to scale horizontally
+
+drawbacks:
+limitation in size and complexity
+application too large and complex to fully understand
+size of application can slow down the startup time
+have to redploy the entire application on each update
+continous deployment is difficult
+difficult to scale, when different modules have conflicting requirement
+bug in any module, can potenially bring down the entire process
+
+
+Microservices:
+the idea is to split your application into a set of smaller, interconnected services instead of building
+a single monolith application. each service has its own hexagonal architecture consisting of business logic 
+and various adapters. 
+Some microservices would expose a REST, RPC or message based API and most services consume API's by other services
+other microservices might implement a web ui.
+
+Each service has its own database schema, ensures loose coupling at the cost of data duplication. 
+also every service can use a type of database that is best suited to its needs, called as polyglot persistence architecture.
+
+API gateway: some api's are exposed to mobile, desktop, and web apps. communication is mediated by an intermediary known as
+API gateway. it is responsible for tasks such as load balancing, caching, access control, API metering and monitoring
+
+benefits: 
+it tackles the problem of complexity by disintegrating application is a set of interconnected microservices which are faster to develop,
+and easy to maintain and scale.
+
+it enables each service to be developed independently by a team that is focused on that service.
+
+it reduces barrier of adopting new tech, since tech is coupled with the service and not the entire project
+
+conitnuous deployment is possible for complex application
+
+Drawbacks:
+
+complexity of mananging a distributing system, need to choose and implement an inter process communication based on messaging or RPS 
+and write code to handle partial failures.
+
+partitioned database architecture, business transactions that update multiple business entities need to update multiple database owned by
+differnt services. distributed transaction is not an option, and you end using EVENTUAL CONSISTENCY based approach, which is more challenging
+
+testing a microservices application is much harder, write tests for a service includes mocking or handling other dependant services too
+
+more difficult to maintain and make changes, since you will handling the multiple services at the time of development and deployment.
+in a microservice architecture, you need to carefully plan and coordinate the rollout of changes to each microservices.
+
+Deployment of microservice: 
+it is deployed on a set of identical servers behind a load balancer, in constrast, a microservice application typically consists
+of a large number of services, each service will have muliple runtime instances. each of which need to be scaled, deployed, configured and monitored.
+in addition, you need to implement a service discovery mechanism. manual operations cannot scale to this level of complexity and successful deployment at
+microservices application requries a high level of automation.
+
+
+
