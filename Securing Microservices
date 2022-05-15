@@ -1,0 +1,50 @@
+Securing microservices architecture:
+
+Secure by design : 
+implementing continous stress testing on your architecture. 
+
+**** Implementing security unit tests:  ****
+Static analysis security testing & dynamic analysis security testing
+
+SAST : detects vulnerabilities in your code and the libraries, requires a scanner with 
+developer's programming language
+
+DAST: works from the outside, mimicking malicious attacks, to identify vulnerablities. 
+doesn't depend on a specific language.
+
+these tests can be built into your delivery pipeline to help minimize the manual security checks that 
+might burden your developers. 
+Open web application security project(OWASP) also offers a series of resources and analysis tools to help
+your team implement best practises as they build out software
+
+**** Scan for Dependencies: ****
+Enabling security alerts in your respository, tools like github's dependabot can help
+automate updates via pull requests
+
+**** Use HTTPS everywhere ****
+transport layer security, https ensures privacy and data integrity by encrypting comm over http
+
+https requires a certificate to authenticate your identity and provide access to encrypted communications
+via public key infrastructure. 
+every aspect of your microservice architecture -> from maven repos to XSDs can refer to these secure URLS
+can also use HTTP strict-transport-security response header to instruct browsers to only access your 
+endpoints using HTTPS
+
+*** Use access and identity tokens ****
+Authorization and authentication ->
+Oauth 2.0 and OIDC (open id connect) add fedegrated identity to delgated authorization. 
+
+
+*** Encrypt and protect secrets ****
+Encrypt secrets using tools like Hashicorp vault, microsoft azure key vault, amazon kms
+amazon kms -> generate a master key, encrypt your data with unique data keys that are
+encrypted by the master key, creating an encrypted message that's stored as a file in a database. 
+
+**** Slow down attackers ****
+Rate limiting the API's can stop or halt attackers to have malicious interaction with your system
+
+**** Know your cloud and cluster security ****
+
+4 c's of cloud native security -> 
+code, container, cluster, cloud/co-lo/corporate datacenter
+
