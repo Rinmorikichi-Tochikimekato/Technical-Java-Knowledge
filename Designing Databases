@@ -1,0 +1,52 @@
+Caching -> Redis, memcache
+
+Remote Dictionary server -> key value store
+used to boost speed for mysql queries at scale, became famous because it is a cache, which can be used as a persistent data store.
+
+Blob Store -> Object Store to store files that can be served when required directly
+
+Text Searching Engine -> SOLR, Elastic Search 
+this is essentially not a database, and can't be called as a persistent data store
+gives the capability of faster reads due to indexing, and fuzzy searches. Faster than a trad database
+
+Time Series Databases :-> 
+When we're building a application metric tracking system such as Grafana, prometheus
+
+We'll need something called as a time series database.
+Extension of RDBMS
+
+Appended write mode -> since its a sequential database store rather than a random query store. this is
+essentially a appeneded write mode db as the data would come from an ever increasing timestamp
+
+Bulk read -> reading time series data to build metrics tracking or analysis would mean that we would need bulk reading capabilities.
+
+Data warehouse -> large data stores used as a dump to store all the data, upon which analytics can happen to make reports and multiple analytics tools can 
+be used to process this large chunk of data is known as a data warehouse
+for example -> Hadoop, Snowflake are some data warehouse
+snowflake -> 
+cloud computing based data warehouse
+
+NoSQL vs SQL databases -> 
+Structured Data
+
+ACID required : YES / NO
+
+use RDBMS -> Postgres, MySQL, Oracle
+
+Non Structured data 
+
+If ++Datatypes && ++Queries ->
+  increasing data types to include more hierarchies and nestings
+  and multiple types of queries 
+  for example -> amazon storing information, for new products and adding new subtypes and product info metadata
+  
+  use Document DB
+ Use MongoDB, CouchDB
+ 
+if Ever increasing data && finite queries 
+  Uber drivers accumalating location information for every ride
+  
+use Columnar DB
+  use Cassandra, HBase
+  
+  
