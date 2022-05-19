@@ -1,0 +1,14 @@
+Generics -> parameterized types. to allow type and userdefined types to be a parameter to methods, classes and
+interfaces. possible to create classes that work with different data types.
+
+Why generics -> object is the superclass of all other classes, and can refer to any object. these features 
+lack type safety. generics add that type of safety feature.
+
+types of generics -> 
+Generic method: method takes a parameter and returns some value after performing a task. 
+
+Generic classes -> implemented exactly like a non-generic class. only difference is that it contains a type 
+parameter section. 
+
+
+
